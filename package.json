@@ -1,0 +1,13 @@
+{
+  "name": "@jgornick/rnw-starter",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "description": "React Native Web Starter",
+  "author": "Joe Gornick <joe@joegornick.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "3.16.4"
+  }
+}
