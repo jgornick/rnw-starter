@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HelloWorld> should match snapshot 1`] = `
+<View>
+  <Text>
+    Hello Native World!
+  </Text>
+</View>
+`;
