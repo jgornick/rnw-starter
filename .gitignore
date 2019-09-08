@@ -584,3 +584,7 @@ hs_err_pid*
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.gitignore.io/api/vim,node,linux,macos,windows,intellij,reactnative,androidstudio,visualstudiocode
+
+### rnw-starter
+
+dist/
