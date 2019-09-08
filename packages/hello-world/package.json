@@ -1,0 +1,31 @@
+{
+  "name": "@jgornick/rnw-starter-hello-world",
+  "version": "0.1.0",
+  "description": "React Native Web Starter React (Native) Hello World Component",
+  "author": "Joe Gornick <joe@joegornick.com>",
+  "homepage": "https://github.com/jgornick/rnw-starter#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgornick/rnw-starter.git"
+  },
+  "scripts": {
+    "build": "yarn build:ts",
+    "build:ts": "tsc --project ./tsconfig.build.json",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/jgornick/rnw-starter/issues"
+  },
+  "dependencies": {
+    "react": "16.9.0",
+    "react-native": "0.60.5"
+  }
+}
