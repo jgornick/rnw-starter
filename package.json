@@ -4,10 +4,36 @@
   "workspaces": [
     "packages/*"
   ],
+  "resolutions": {
+    "react": "16.9.0",
+    "react-native": "0.60.5"
+  },
   "description": "React Native Web Starter",
   "author": "Joe Gornick <joe@joegornick.com>",
   "license": "MIT",
   "devDependencies": {
-    "lerna": "3.16.4"
+    "@babel/cli": "7.6.0",
+    "@babel/core": "7.6.0",
+    "@babel/preset-env": "7.6.0",
+    "@babel/preset-react": "7.0.0",
+    "@babel/preset-typescript": "7.6.0",
+    "@types/enzyme": "3.10.3",
+    "@types/jest": "24.0.18",
+    "@types/lodash": "4.14.138",
+    "@types/react": "16.9.2",
+    "@types/react-native": "0.60.12",
+    "babel-jest": "24.9.0",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.14.0",
+    "enzyme-to-json": "3.4.0",
+    "jest": "24.9.0",
+    "jest-enzyme": "7.1.1",
+    "jest-extended": "0.11.2",
+    "jsdom": "15.1.1",
+    "lerna": "3.16.4",
+    "lodash": "4.17.15",
+    "react-dom": "16.9.0",
+    "ts-jest": "24.0.2",
+    "typescript": "3.6.2"
   }
 }
