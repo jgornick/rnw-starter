@@ -1,4 +1,5 @@
 const CONFIG_TYPES = [
+  'native',
   'test',
 ]
 
@@ -29,6 +30,17 @@ module.exports = (api) => {
       '@babel/plugin-transform-flow-strip-types',
       '@babel/proposal-class-properties',
     ],
+  }
+
+  if (env === 'native') {
+    config.presets = [
+      'module:metro-react-native-babel-preset'
+    ]
+
+    config.plugins = [
+      '@babel/plugin-proposal-export-default-from',
+      ['@babel/plugin-proposal-decorators', { legacy: true }]
+    ]
   }
 
   return config
