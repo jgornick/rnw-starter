@@ -1,7 +1,7 @@
 const { createTransformer } = require('babel-jest')
 
 const transformer = createTransformer({
-  envName: 'test'
+  envName: 'native'
 })
 
 module.exports = transformer
