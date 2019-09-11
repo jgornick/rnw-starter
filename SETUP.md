@@ -73,8 +73,15 @@
 	1. Fix paths in `packages/native/ios/Podfile` to `../../../node_modules...`
 	1. Remove fishook pod from Podfile
 	1. Install pods: `cd packages/native/ios` then `pod install --repo-update`
+  1. Fix metro.config to support monorepo
+      1. https://github.com/facebook/react-native/issues/21310#issuecomment-507818090
+      1. `yarn workspace @jgornick/rnw-starter-native add -D -E get-yarn-workspaces`
+			1. `yarn workspace @jgornick/rnw-starter-native add -E @babel/runtime`
+  1. Start emulator: `$ANDROID_HOME/tools/emulator -avd rnw-starter-native-emulator`
+  1. Build and install application: `yarn workspace @jgornick/rnw-starter-native run react-native run-android`
+  1. Start metro bundler: `yarn workspace @jgornick/rnw-starter-native run react-native start`
 
-1. Setup `haul`
+2. Setup `haul`
 	1.
 
 
