@@ -25,6 +25,7 @@
     "url": "https://github.com/jgornick/rnw-starter/issues"
   },
   "dependencies": {
+    "@jgornick/rnw-starter-hello-world": "0.1.0",
     "react": "16.9.0",
     "react-native": "0.60.5"
   }
