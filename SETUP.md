@@ -82,26 +82,28 @@
   1. Start metro bundler: `yarn workspace @jgornick/rnw-starter-native run react-native start`
 
 2. Setup `haul`
-	1.
+	1.`yarn workspace @jgornick/rnw-starter-native add -E -D @haul-bundler/cli`
+	1. `yarn workspace @jgornick/rnw-starter-native run haul init`
+  1. ``
 
 
-1. Add react-native app
+3. Add react-native app
   1. `yarn lerna create app`
-  1. Setup tsconfig and tsconfig.build
-  1. Update package.json main to point to dist/main
-  1. Create component
-	1. Add script to build typescript
+  2. Setup tsconfig and tsconfig.build
+  3. Update package.json main to point to dist/main
+  4. Create component
+	2. Add script to build typescript
 
-1. Add react-native hello-world
+4. Add react-native hello-world
   1. `yarn lerna create hello-world`
-1. Add react-native emulator
-1. Add react-native native app
-1. Add react-native-web
+5. Add react-native emulator
+6. Add react-native native app
+7. Add react-native-web
 
 
-1. Setup hygen for generators
-	1. `yarn add -D -E -W hygen`
-	1. `yarn hygen init self`
+8. Setup hygen for generators
+	3. `yarn add -D -E -W hygen`
+	4. `yarn hygen init self`
 
 
 https://gitlab.com/protium-network/protium/tree/master
