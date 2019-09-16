@@ -39,11 +39,13 @@
 	1. Install Android SDK `brew cask install android-sdk` or `brew cask android-studio`
 		1. Export `ANDROID_HOME`:
 			```
-			export ANDROID_HOME=/usr/local/share/android-sdk
+			# Android SDK
 			export PATH=$PATH:$ANDROID_HOME/emulator
-			export PATH=$PATH:$ANDROID_HOME/tools
-			export PATH=$PATH:$ANDROID_HOME/tools/bin
-			export PATH=$PATH:$ANDROID_HOME/platform-tools
+			export ANDROID_HOME=/Users/markhan/Library/Android/sdk
+			export PATH=$PATH:$ANDROID_HOME/platform-tools/
+			export PATH=$PATH:$ANDROID_HOME/tools/bin/
+			export PATH=$PATH:$ANDROID_HOME/tools/
+			PATH=$ANDROID_HOME/emulator:$PATH
 			```
 		1. Setup android sdk repo:
 			```
@@ -55,33 +57,34 @@
 		1. Install HAXM: `$ANDROID_HOME/extras/intel/Hardware_Accelerated_Execution_Manager/HAXM\ installation`
 			1. https://github.com/intel/haxm/wiki/Installation-Instructions-on-macOS#Downloading_Intel_HAXM
 		1. Create rnw-starter-native-emulator: `avdmanager create avd --force -n rnw-starter-native-emulator -d 17 -k "system-images;android-28;default;x86_64"`
-	1. Install cocoapods: `brew install cocoapods`
-	1. Install qt library for Android emulator: `brew install qt`
-	1. Install Xcode
+   		1. https://gist.github.com/mrk-han/66ac1a724456cadf1c93f4218c6060ae
+	2. Install cocoapods: `brew install cocoapods`
+	3. Install qt library for Android emulator: `brew install qt`
+	4. Install Xcode
 		1. Setup xcode: `sudo xcode-select --switch /Applications/Xcode.app`
 			1. https://github.com/facebook/react-native/issues/18408#issuecomment-386696744
 
-1. Setup native package
-	1. `yarn react-native init RnwStarterNative --template react-native-template-typescript@next --directory packages/native`
-	1. Fix paths to node_modules in `settings.gradle` and `build.gradle`
-	1. Add root path to `applyNativeModulesSettingsGradle` and `applyNativeModulesAppBuildGradle`
+2. Setup native package
+	5. `yarn react-native init RnwStarterNative --template react-native-template-typescript@next --directory packages/native`
+	6. Fix paths to node_modules in `settings.gradle` and `build.gradle`
+	7. Add root path to `applyNativeModulesSettingsGradle` and `applyNativeModulesAppBuildGradle`
 		1. https://github.com/react-native-community/cli/blob/master/docs/autolinking.md#custom-root-monorepos-1
-		1. Need to set the root path to the native app so that the react-native config command knows how to load the paths
-	1. Update `@react-native-community/cli-platform-android/native_modules.grade` command to run react-native: `def command = "./node_modules/.bin/react-native config"`
-	1. Add the default template `debug.keystore` into `app`
+		2. Need to set the root path to the native app so that the react-native config command knows how to load the paths
+	8. Update `@react-native-community/cli-platform-android/native_modules.grade` command to run react-native: `def command = "./node_modules/.bin/react-native config"`
+	9. Add the default template `debug.keystore` into `app`
 		1. https://github.com/facebook/react-native/issues/25629#issuecomment-513245590
-	1. Fix paths in `packages/native/ios/Podfile` to `../../../node_modules...`
-	1. Remove fishook pod from Podfile
-	1. Install pods: `cd packages/native/ios` then `pod install --repo-update`
+	10. Fix paths in `packages/native/ios/Podfile` to `../../../node_modules...`
+	11. Remove fishook pod from Podfile
+	12. Install pods: `cd packages/native/ios` then `pod install --repo-update`
   1. Fix metro.config to support monorepo
       1. https://github.com/facebook/react-native/issues/21310#issuecomment-507818090
-      1. `yarn workspace @jgornick/rnw-starter-native add -D -E get-yarn-workspaces`
+      2. `yarn workspace @jgornick/rnw-starter-native add -D -E get-yarn-workspaces`
 			1. `yarn workspace @jgornick/rnw-starter-native add -E @babel/runtime`
-  1. Start emulator: `$ANDROID_HOME/tools/emulator -avd rnw-starter-native-emulator`
-  1. Build and install application: `yarn workspace @jgornick/rnw-starter-native run react-native run-android`
-  1. Start metro bundler: `yarn workspace @jgornick/rnw-starter-native run react-native start`
+  2. Start emulator: `$ANDROID_HOME/tools/emulator -avd rnw-starter-native-emulator`
+  3. Build and install application: `yarn workspace @jgornick/rnw-starter-native run react-native run-android`
+  4. Start metro bundler: `yarn workspace @jgornick/rnw-starter-native run react-native start`
 
-2. Setup `haul`
+3. Setup `haul`
 	1.`yarn workspace @jgornick/rnw-starter-native add -E -D @haul-bundler/cli`
 	1. `yarn workspace @jgornick/rnw-starter-native run haul init`
   1. ``
