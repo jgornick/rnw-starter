@@ -46,27 +46,6 @@ function setupBabelRule(rule) {
     rootMode: 'upward',
     cacheDirectory: true,
   }
-
-  // by default the babel rule is configured with an exclude:
-  // "/node_modules(?!.*[\\/\\\\](react|@react-navigation|@react-native-community|@expo|pretty-format|@haul-bundler|metro))/",
-  delete rule.exclude
-
-  // tell the rule to also transpile certain node modules
-  rule.test = /\.(j|t)sx?$/
-  rule.include = [
-    resolvePkg('react-native'),
-    resolvePkg('react'),
-    resolvePkg('pretty-format'),
-    resolvePkg('metro'),
-
-    // Our dependencies
-    resolvePkg('@jgornick/rnw-starter-app'),
-    resolvePkg('@jgornick/rnw-starter-hello-world'),
-
-    // Our app code
-    path.resolve('./index.ts'),
-    path.resolve('./App.tsx'),
-  ]
 }
 
 export default makeConfig({
@@ -86,6 +65,9 @@ export default makeConfig({
           resolvePkg('react-native/Libraries/Core/InitializeCore.js'),
           path.resolve(__dirname, 'index.ts'),
         ]
+
+        const babelRule = findRuleByLoader(config, 'babel-loader')
+        setupBabelRule(babelRule)
 
         runtime.logger.info(JSON.stringify(config, null, '  '))
 
