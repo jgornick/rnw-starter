@@ -1,4 +1,4 @@
-import { withPolyfills, makeConfig } from "@haul-bundler/preset-0.60";
+import { makeConfig } from "@haul-bundler/preset-0.60";
 import { find, get, isString, some } from 'lodash'
 import path from 'path'
 import resolvePkg from 'resolve-pkg'
@@ -20,15 +20,6 @@ function findRuleByLoader(config, loaderName) {
 
 function findLoaderInRule(rule, loaderName) {
   return find(
-    get(rule, 'use', []),
-    u => isString(u)
-      ? u.indexOf(loaderName) > -1
-      : u.loader.indexOf(loaderName) > -1
-  )
-}
-
-function removeLoaderFromRule(rule, loaderName) {
-  remove(
     get(rule, 'use', []),
     u => isString(u)
       ? u.indexOf(loaderName) > -1
