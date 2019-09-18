@@ -23,6 +23,7 @@
     "@haul-bundler/cli": "0.13.0",
     "@haul-bundler/core": "0.13.0",
     "@haul-bundler/preset-0.60": "0.13.0",
+    "@storybook/react-native": "5.2.1",
     "get-yarn-workspaces": "1.0.2",
     "ini-builder": "1.1.1",
     "lodash": "4.17.15",
