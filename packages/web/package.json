@@ -1,0 +1,38 @@
+{
+  "name": "@jgornick/rnw-starter-web",
+  "version": "0.1.0",
+  "description": "React Native Web Starter React Web (Storybook)",
+  "author": "Joe Gornick <joe@joegornick.com>",
+  "homepage": "https://github.com/jgornick/rnw-starter#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgornick/rnw-starter.git"
+  },
+  "scripts": {
+    "build": "build-storybook -o ./dist -c .storybook",
+    "start": "start-storybook -p 9001 -c .storybook",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/jgornick/rnw-starter/issues"
+  },
+  "dependencies": {
+    "@storybook/addon-options": "5.2.5",
+    "@storybook/react": "5.2.5",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-native-web": "0.11.7",
+    "regenerator-runtime": "0.13.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.6.4",
+    "babel-loader": "8.0.6",
+    "babel-plugin-react-native-web": "0.11.7",
+    "url-loader": "2.2.0",
+    "webpack": "4.41.2"
+  }
+}
