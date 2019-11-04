@@ -2,7 +2,7 @@ import { setOptions } from '@storybook/addon-options'
 import centered from './decorator-centered'
 import { configure, addDecorator } from '@storybook/react'
 
-const context = require.context(path.resolve(__dirname, '..', '..'), true, /story\.tsx$/)
+const context = require.context('<packages>', true, /.story\.tsx$/);
 
 addDecorator(centered)
 
