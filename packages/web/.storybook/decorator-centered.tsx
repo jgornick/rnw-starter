@@ -9,6 +9,6 @@ const styles = StyleSheet.create({
   }
 })
 
-export default function(renderStory) {
+export default function (renderStory) {
   return <View style={styles.root}>{renderStory()}</View>
 }
