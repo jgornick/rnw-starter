@@ -11,6 +11,12 @@
   "description": "React Native Web Starter",
   "author": "Joe Gornick <joe@joegornick.com>",
   "license": "MIT",
+  "scripts": {
+    "start:emulator:android": "yarn workspace @jgornick/rnw-starter-native emulator:android:start",
+    "start:native": "yarn workspace @jgornick/rnw-starter-native start",
+    "start:storybook:native:android": "stmux -w always -- [ \"yarn start:emulator:android\" : \"yarn start:native\" ]",
+    "start:storybook:web": "yarn workspace @jgornick/rnw-starter-web start"
+  },
   "devDependencies": {
     "@babel/cli": "7.6.4",
     "@babel/core": "7.6.4",
@@ -34,6 +40,7 @@
     "lodash": "4.17.15",
     "react-dom": "16.9.0",
     "react-native": "0.60.5",
+    "stmux": "1.7.1",
     "ts-jest": "24.0.2",
     "typescript": "3.6.4"
   }
