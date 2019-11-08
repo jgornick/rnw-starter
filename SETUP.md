@@ -18,11 +18,11 @@
 			mkdir ~/.android
 			touch ~/.android/repositories.cfg
 			sdkmanager --update
-			sdkmanager "extras;intel;Hardware_Accelerated_Execution_Manager" "platform-tools" "platforms;android-28" "emulator" "system-images;android-28;default;x86_64"
+			sdkmanager "extras;intel;Hardware_Accelerated_Execution_Manager" "platform-tools" "platforms;android-28" "emulator" "system-images;android-28;google_apis;x86_64"
 			```
 		1. Install HAXM: `$ANDROID_HOME/extras/intel/Hardware_Accelerated_Execution_Manager/HAXM\ installation`
 			1. https://github.com/intel/haxm/wiki/Installation-Instructions-on-macOS#Downloading_Intel_HAXM
-		1. Create rnw-starter-native-emulator: `avdmanager create avd --force -n rnw-starter-native-emulator -d 17 -k "system-images;android-28;default;x86_64"`
+		1. Create rnw-starter-native-emulator: `echo "no" | avdmanager --verbose create avd --force --name "rnw-starter-android-pixel" --device "pixel" --package "system-images;android-28;google_apis;x86_64" --tag "google_apis" --abi "x86_64"`
    		1. https://gist.github.com/mrk-han/66ac1a724456cadf1c93f4218c6060ae
 	2. Install cocoapods: `brew install cocoapods`
 	3. Install qt library for Android emulator: `brew install qt`
@@ -108,8 +108,8 @@
       1. https://github.com/facebook/react-native/issues/21310#issuecomment-507818090
       1. `yarn workspace @jgornick/rnw-starter-native add -D -E get-yarn-workspaces`
 			1. `yarn workspace @jgornick/rnw-starter-native add -E @babel/runtime`
-  1. Start emulator: `$ANDROID_HOME/tools/emulator -avd rnw-starter-native-emulator`
-  1. Build and install application: `yarn workspace @jgornick/rnw-starter-native run react-native run-android`
+  1. Start emulator: `emulator @rnw-starter-android-pixel -no-boot-anim -netdelay none -no-snapshot -wipe-data -skin 1080x1920 &`
+  1. Build and install application: `yarn workspace @jgornick/rnw-starter-native react-native run-android --no-packager`
   1. Start metro bundler: `yarn workspace @jgornick/rnw-starter-native run react-native start`
 
 ---
@@ -144,3 +144,63 @@ https://gitlab.com/protium-network/protium/tree/master
 https://github.com/erickjth/react-native-web-monorepo-lerna
 https://github.com/brunolemos/react-native-web-monorepo
 https://github.com/serhii-havrylenko/monorepo-babel-ts-lerna-starter
+
+---
+
+# Setup iOS
+
+## Get list of devices
+
+xcrun simctl list --json devicetypes
+
+Parse the JSON for iPhone X
+
+## Get list of runtimes
+
+xcrun simctl list --json runtimes
+
+Parse the JSON for latest iOS
+
+## Create emulator
+
+xcrun simctl create rnw-starter-iphone-x com.apple.CoreSimulator.SimDeviceType.iPhone-X com.apple.CoreSimulator.SimRuntime.iOS-13-1
+
+Returns the UUID
+
+## Get the rnw-starter-iphone-x UUID
+
+xcrun simctl list --json devices
+
+Parse the JSON for the runtime and name
+
+## Boot the emulator
+
+xcrun simctl boot F5E2DAD2-2844-4191-A1D8-9AFF3EBB81AD
+
+## Start the emulator
+
+open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/
+
+## Update podfile node module locations
+
+Update packages/native/ios/Podfile node_module location to react-native
+
+## Update project.pbxproj with node module locations
+
+Update packages/native/ios/RnwStarterNative.xcodeproj/project.pbxproj node_module location to react-native
+
+## Update *.scscheme with node module locations
+
+Update packages/native/ios/RnwStarterNative.xcodeproj/xcshareddata/xcschemes/RnwStarterNative-tvOS.xcscheme node_module location to react-native
+Update packages/native/ios/RnwStarterNative.xcodeproj/xcshareddata/xcschemes/RnwStarterNative.xcscheme node_module location to react-native
+
+> Open your favorite editor and use the Search & Replace feature to replace all occurrences of node_modules/react-native/ with ../../node_modules/react-native/.
+
+## Install pods
+
+cd packages/native/ios && pod install --repo-update && cd -
+
+## Install application to emulator
+
+yarn workspace @jgornick/rnw-starter-native react-native run-ios --simulator "rnw-starter-iphone-x" --no-packager
+

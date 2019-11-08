@@ -6,6 +6,7 @@
   ],
   "resolutions": {
     "react": "16.9.0",
+    "react-dom": "16.9.0",
     "react-native": "0.60.5"
   },
   "description": "React Native Web Starter",
@@ -18,11 +19,11 @@
     "start:storybook:web": "yarn workspace @jgornick/rnw-starter-web start"
   },
   "devDependencies": {
-    "@babel/cli": "7.6.4",
-    "@babel/core": "7.6.4",
-    "@babel/preset-env": "7.6.3",
-    "@babel/preset-react": "7.6.3",
-    "@babel/preset-typescript": "7.6.0",
+    "@babel/cli": "7.7.0",
+    "@babel/core": "7.7.2",
+    "@babel/preset-env": "7.7.1",
+    "@babel/preset-react": "7.7.0",
+    "@babel/preset-typescript": "7.7.2",
     "@types/enzyme": "3.10.3",
     "@types/jest": "24.0.18",
     "@types/lodash": "4.14.138",
@@ -41,7 +42,7 @@
     "react-dom": "16.9.0",
     "react-native": "0.60.5",
     "stmux": "1.7.1",
-    "ts-jest": "24.0.2",
-    "typescript": "3.6.4"
+    "ts-jest": "24.1.0",
+    "typescript": "3.7.2"
   }
 }
