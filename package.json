@@ -13,9 +13,13 @@
   "author": "Joe Gornick <joe@joegornick.com>",
   "license": "MIT",
   "scripts": {
+    "create:emulator:android": "yarn workspace @jgornick/rnw-starter-native create:emulator:android",
+    "create:emulator:ios": "yarn workspace @jgornick/rnw-starter-native create:emulator:ios",
     "start:emulator:android": "yarn workspace @jgornick/rnw-starter-native emulator:android:start",
+    "start:emulator:ios": "yarn workspace @jgornick/rnw-starter-native emulator:ios:start",
     "start:native": "yarn workspace @jgornick/rnw-starter-native start",
     "start:storybook:native:android": "stmux -w always -- [ \"yarn start:emulator:android\" : \"yarn start:native\" ]",
+    "start:storybook:native:ios": "stmux -w always -- [ \"yarn start:emulator:ios\" : \"yarn start:native\" ]",
     "start:storybook:web": "yarn workspace @jgornick/rnw-starter-web start"
   },
   "devDependencies": {
