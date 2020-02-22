@@ -204,3 +204,9 @@ cd packages/native/ios && pod install --repo-update && cd -
 
 yarn workspace @jgornick/rnw-starter-native react-native run-ios --simulator "rnw-starter-iphone-x" --no-packager
 
+---
+
+# Errors
+
+* [invalid property name - must be a string, number or identifier](https://github.com/facebook/hermes/blob/master/lib/Parser/JSParserImpl.cpp#L2436)
+  * Looks like there is something wrong with hermes enabled and running non-debug mode
