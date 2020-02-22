@@ -24,7 +24,10 @@ const projects = fs.readdirSync(packagesPath)
     config.displayName = packageJson.name
 
     if (!config.setupFilesAfterEnv) {
-      config.setupFilesAfterEnv = ['<rootDir>/test/jest-framework-setup-node.js'];
+      config.setupFilesAfterEnv = [
+        'jest-enzyme',
+        '<rootDir>/test/jest-framework-setup-node.js'
+      ];
     }
 
     config.roots = [
@@ -44,7 +47,7 @@ module.exports = {
   automock: false,
   bail: false,
   projects,
-  testEnvironment: 'node',
+  testEnvironment: 'enzyme',
   testPathIgnorePatterns: [
     '\\.snap$',
     'node_modules'
