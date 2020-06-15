@@ -3,10 +3,10 @@
   "compilerOptions": {
     "paths": {
       "@jgornick/rnw-starter-app": [
-        "node_modules/@jgornick/rnw-starter-app/src"
+        "packages/app/src"
       ],
       "@jgornick/rnw-starter-hello-world": [
-        "node_modules/@jgornick/rnw-starter-hello-world/src"
+        "packages/hello-world/src"
       ]
     }
   }
