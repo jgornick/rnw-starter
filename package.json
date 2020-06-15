@@ -5,9 +5,9 @@
     "packages/*"
   ],
   "resolutions": {
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
-    "react-native": "0.61.5"
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "0.62.2"
   },
   "description": "React Native Web Starter",
   "author": "Joe Gornick <joe@joegornick.com>",
@@ -44,13 +44,13 @@
     "jsdom": "16.2.0",
     "lerna": "3.20.2",
     "lodash": "4.17.15",
-    "react-dom": "16.12.0",
-    "react-native": "0.61.5",
+    "npm-run-all": "4.1.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "0.62.2",
+    "shx": "0.3.2",
     "stmux": "1.8.0",
     "ts-jest": "25.2.1",
     "typescript": "3.8.2"
-  },
-  "dependencies": {
-    "react": "16.12.0"
   }
 }

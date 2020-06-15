@@ -1,34 +1,42 @@
 {
   "name": "@jgornick/rnw-starter-native",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "bundle:android": "haul bundle --platform android",
-    "bundle:ios": "haul bundle --platform ios",
-    "clean:android": "cd android && ./gradlew clean",
+    "bundle:ios": "haul bundle --platform ios --bundle-output ./ios/main.jsbundle",
+    "clean:ios:build": "xcodebuild clean -workspace ./ios/RnwStarterNative.xcworkspace -scheme RnwStarterNative",
+    "clean:ios:pods": "shx rm -rf ./ios/Pods",
+    "clean:ios": "run-s clean:ios:pods clean:ios:build",
+    "init": "run-s install:gems install:ios",
+    "install:gems": "bundle install",
+    "install:ios": "cd ios && bundle exec pod install --repo-update && cd -",
+    "reset:ios": "run-s clean:ios install:ios",
+    "start:android": "react-native run-android --no-packager --verbose",
+    "start:ios": "react-native run-ios --no-packager --verbose",
     "start": "haul start",
-    "start:android": "react-native run-android --no-packager",
     "test": "jest"
   },
   "dependencies": {
-    "@babel/runtime": "7.8.4",
-    "@jgornick/rnw-starter-app": "0.1.0",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
-    "react-native": "0.61.5"
+    "react": "16.13.1",
+    "react-native": "0.62.2"
   },
   "devDependencies": {
-    "@babel/core": "7.8.4",
-    "@haul-bundler/babel-preset-react-native": "0.16.0",
-    "@haul-bundler/cli": "0.17.0",
-    "@haul-bundler/core": "0.17.0",
-    "@haul-bundler/preset-0.60": "0.17.0",
-    "@storybook/react-native": "5.3.13",
-    "get-yarn-workspaces": "1.0.2",
-    "ini-builder": "1.1.1",
-    "lodash": "4.17.15",
+    "@babel/core": "7.6.2",
+    "@babel/runtime": "7.6.2",
+    "@react-native-community/eslint-config": "1.0.0",
+    "@types/jest": "24.0.24",
+    "@types/react-native": "0.62.0",
+    "@types/react-test-renderer": "16.9.2",
+    "@typescript-eslint/eslint-plugin": "2.27.0",
+    "@typescript-eslint/parser": "2.27.0",
+    "babel-jest": "24.9.0",
+    "eslint": "6.5.1",
+    "jest": "24.9.0",
     "metro-react-native-babel-preset": "0.58.0",
-    "resolve-pkg": "2.0.0",
-    "webpack": "4.41.6"
+    "npm-run-all": "4.1.5",
+    "react-test-renderer": "16.11.0",
+    "prettier": "2.0.4",
+    "shx": "0.3.2",
+    "typescript": "3.8.3"
   }
 }
