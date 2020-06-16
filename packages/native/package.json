@@ -10,10 +10,12 @@
     "init": "run-s install:gems install:ios",
     "install:gems": "bundle install",
     "install:ios": "cd ios && bundle exec pod install --repo-update && cd -",
+    "load:stories": "rnstl --searchDir ../ --pattern \"**/*.story.tsx\" --outputFile ./.storybook/stories.js",
     "reset:ios": "run-s clean:ios install:ios",
     "start:android": "react-native run-android --no-packager --verbose",
+    "start:haul": "haul start",
     "start:ios": "react-native run-ios --no-packager --verbose",
-    "start": "haul start",
+    "start": "run-s load:stories start:haul",
     "test": "jest"
   },
   "dependencies": {
@@ -28,6 +30,7 @@
     "@storybook/react-native": "5.3.19",
     "metro-react-native-babel-preset": "0.59.0",
     "npm-run-all": "4.1.5",
+    "react-native-storybook-loader": "1.8.1",
     "shx": "0.3.2",
     "tsconfig-paths-webpack-plugin": "3.2.0",
     "typescript": "3.9.5"
