@@ -1,6 +1,7 @@
 const { find, set, get, isString, some } = require('lodash')
 const path = require('path')
 const resovePkg = require('resolve-pkg')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const webpack = require('webpack')
 
 function findRuleByLoader(config, loaderName) {
@@ -52,7 +53,17 @@ module.exports = async ({ config, mode }) => {
     }
   })
 
-  config.resolve.extensions = ['.web.ts', '.ts', '.json', '.web.tsx', '.tsx', '.js', '.jsx']
+  config.resolve.extensions = [
+    '.web.ts',
+    '.web.tsx',
+    '.tsx',
+    '.ts',
+    '.web.js',
+    '.web.jsx',
+    '.jsx',
+    '.js',
+    '.json',
+  ]
 
   config.resolve.alias = {
     ...config.resolve.alias,
@@ -64,6 +75,11 @@ module.exports = async ({ config, mode }) => {
     // Alias react-native-web to an absolute path since it's currently not in root
     'react-native-web': resovePkg('react-native-web', { cwd: __dirname })
   }
+
+  config.resolve.plugins = [
+    ...config.resolve.plugins || [],
+    new TsconfigPathsPlugin(),
+  ]
 
   // Add the packages absolute path so that require.context is able to parse the path
   config.plugins.unshift(
