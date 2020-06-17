@@ -27,5 +27,9 @@
   "dependencies": {
     "react": "16.13.1",
     "react-native": "0.62.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "5.3.19",
+    "@storybook/react-native": "5.3.19"
   }
 }

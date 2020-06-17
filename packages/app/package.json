@@ -28,5 +28,9 @@
     "@jgornick/rnw-starter-hello-world": "0.1.0",
     "react": "16.13.1",
     "react-native": "0.61.5"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "5.3.19",
+    "@storybook/react-native": "5.3.19"
   }
 }

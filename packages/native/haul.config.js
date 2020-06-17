@@ -16,6 +16,22 @@ export default makeConfig({
           `Altering Webpack config for bundle ${bundleName} for ${env.platform}`
         );
 
+        config.resolve.extensions = [
+          `.${env.platform}.tsx`,
+          `.${env.platform}.jsx`,
+          `.${env.platform}.ts`,
+          `.${env.platform}.js`,
+          '.native.tsx',
+          '.native.jsx',
+          '.native.ts',
+          '.native.js',
+          '.tsx',
+          '.jsx',
+          '.ts',
+          '.js',
+          '.json',
+        ]
+
         config.resolve.plugins.push(new TsconfigPathsPlugin())
 
         console.debug(JSON.stringify(config, null, '  '))

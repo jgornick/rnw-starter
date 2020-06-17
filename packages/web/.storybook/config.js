@@ -1,5 +1,5 @@
 import { setOptions } from '@storybook/addon-options'
-import centered from './decorator-centered'
+import { centered } from '@jgornick/rnw-starter-storybook/decorators/centered'
 import { configure, addDecorator } from '@storybook/react'
 
 const context = require.context('<packages>', true, /.story\.tsx$/);
@@ -8,11 +8,9 @@ addDecorator(centered)
 
 setOptions({
   name: 'RnwStarter',
-  url: 'https://necolas.github.io/react-native-web',
-  goFullScreen: false,
-  addonPanelInRight: false,
-  showSearchBox: false,
-  showAddonPanel: false,
+  addonPanelInRight: true,
+  showSearchBox: true,
+  showAddonPanel: true,
   showStoriesPanel: true,
 })
 

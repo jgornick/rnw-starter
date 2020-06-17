@@ -1,4 +1,17 @@
 {
   "extends": "../../tsconfig.json",
-  "module": "commonjs"
+  "compilerOptions": {
+    "module": "commonjs",
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.json"
+  ],
+  "exclude": [
+    "node_modules/**"
+  ],
+  "references": [
+    { "path": "../storybook" }
+  ]
 }
