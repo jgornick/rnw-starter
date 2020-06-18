@@ -9,6 +9,8 @@ import { loadStories } from './.storybook/stories'
 
 import '@storybook/addon-ondevice-actions/register'
 
+addDecorator(centered)
+
 configure(() => {
   loadStories()
 }, module);
@@ -16,7 +18,5 @@ configure(() => {
 const StorybookUIRoot = getStorybookUI({})
 
 AppRegistry.registerComponent(appName, () => StorybookUIRoot)
-
-addDecorator(centered)
 
 export default StorybookUIRoot

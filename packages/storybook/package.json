@@ -30,14 +30,10 @@
   },
   "peerDependencies": {
     "@storybook/addon-actions": "5.3.19",
-    "@storybook/addon-options": "5.3.19",
-    "@storybook/addon-ondevice-actions": "5.3.19",
-    "@storybook/addon-ondevice-options": "5.3.19"
+    "@storybook/addon-ondevice-actions": "5.3.19"
   },
   "devDependencies": {
     "@storybook/addon-actions": "5.3.19",
-    "@storybook/addon-options": "5.3.19",
-    "@storybook/addon-ondevice-actions": "5.3.19",
-    "@storybook/addon-ondevice-options": "5.3.19"
+    "@storybook/addon-ondevice-actions": "5.3.19"
   }
 }

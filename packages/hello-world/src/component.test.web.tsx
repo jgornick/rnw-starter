@@ -1,27 +1,26 @@
 import { shallow } from 'enzyme'
 import React from 'react'
-import { Text } from 'react-native'
 
 import { HelloWorld } from './component'
 
 describe('<HelloWorld>', () => {
+  const mockHandlePress = jest.fn()
+
   const createWrapper = () => shallow<typeof HelloWorld>(
-    <HelloWorld />
+    <HelloWorld onPress={mockHandlePress} />
   )
 
-  type WrapperType = ReturnType<typeof createWrapper>
-
-  let wrapper: WrapperType
-
   beforeEach(() => {
-    wrapper = createWrapper()
+    jest.resetAllMocks()
   })
 
-  it('should render "Hello Native World!"', () => {
-    expect(wrapper.find(Text).children()).toHaveText('Hello Native World!')
+  it('should render "Hello Web World!"', () => {
+    const wrapper = createWrapper()
+    expect(wrapper.find('button').children()).toHaveText('Hello Web World!')
   })
 
   it('should match snapshot', () => {
+    const wrapper = createWrapper()
     expect(wrapper).toMatchSnapshot()
   })
 })

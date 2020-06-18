@@ -1,7 +1,6 @@
-const { createTransformer } = require('babel-jest')
+const { createTransformer } = require('babel-jest');
+const process = require('process');
 
-const transformer = createTransformer({
-  envName: 'native'
+module.exports = createTransformer({
+  rootMode: 'upward',
 })
-
-module.exports = transformer

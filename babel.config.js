@@ -5,6 +5,8 @@ const CONFIG_TYPES = [
 
 module.exports = (api) => {
   const env = api.env()
+  console.log('BABEL CONFIG ENV', env)
+  const isTest = api.env('test')
 
   if (!CONFIG_TYPES.includes(env)) {
     throw new Error(`${env} is not implemented! Try setting babel.envName.`)
