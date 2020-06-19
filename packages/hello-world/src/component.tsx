@@ -6,4 +6,4 @@ export interface HelloWorldProps {
 }
 
 export const HelloWorld: FC<HelloWorldProps> = ({ onPress }) =>
-  <Button title="Hello Native World!" onPress={onPress} />
+  <Button title="Hello All Worlds!" onPress={onPress} />

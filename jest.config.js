@@ -6,9 +6,9 @@ const config = {
   bail: false,
 }
 
-Object.defineProperty(RegExp.prototype, "toJSON", {
-  value: RegExp.prototype.toString
-});
-console.log(JSON.stringify(config, null, '  '))
+// Object.defineProperty(RegExp.prototype, "toJSON", {
+//   value: RegExp.prototype.toString
+// });
+// console.log(JSON.stringify(config, null, '  '))
 
 module.exports = config

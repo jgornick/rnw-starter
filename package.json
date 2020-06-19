@@ -22,6 +22,7 @@
     "start:dev": "stmux -w always -e ERROR -m beep,system -- [ \"yarn dev:native\" : \"yarn dev:web\" ]",
     "start:android": "yarn workspace @jgornick/rnw-starter-native start:android",
     "start:ios": "yarn workspace @jgornick/rnw-starter-native start:ios",
+    "workflow:all": "run-s start:android start:ios start:dev",
     "workflow:android": "run-s start:android dev:native",
     "workflow:ios": "run-s start:ios dev:native",
     "workflow:web": "run-s dev:web"

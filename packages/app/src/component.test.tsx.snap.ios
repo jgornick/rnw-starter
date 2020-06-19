@@ -1,9 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App> should match snapshot 1`] = `
-<View>
-  <Text>
-    App
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "fontSize": 16,
+        "marginVertical": 20,
+      }
+    }
+  >
+    App Component w/ HelloWorld
   </Text>
   <HelloWorld />
 </View>

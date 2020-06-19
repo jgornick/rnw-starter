@@ -7,7 +7,7 @@ export interface AppProps {
 }
 
 export const App: FC<AppProps> = ({ onPress }) =>
-  <View>
-    <Text>App</Text>
+  <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+    <Text style={{ marginVertical: 20, fontSize: 16 }}>App Component w/ HelloWorld</Text>
     <HelloWorld onPress={onPress} />
   </View>

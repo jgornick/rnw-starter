@@ -2,11 +2,11 @@
   "extends": "./tsconfig.settings.json",
   "compilerOptions": {
     "paths": {
-      "@jgornick/rnw-starter-app*": [
-        "./packages/app/src*"
+      "@jgornick/rnw-starter-app": [
+        "./packages/app/src"
       ],
-      "@jgornick/rnw-starter-hello-world*": [
-        "./packages/hello-world/src*"
+      "@jgornick/rnw-starter-hello-world": [
+        "./packages/hello-world/src"
       ],
       "@jgornick/rnw-starter-storybook*": [
         "./packages/storybook/src*"
